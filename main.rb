@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'elephrame'
 require 'time'
 require 'syslog/logger'
@@ -5,7 +6,9 @@ require 'syslog/logger'
 log = Syslog::Logger.new 'meowd'
 
 # our helping of mews
-Mews = [ 'meow', 'mew', 'purr' ]
+Mews = [ 'meow', 'mew', 'purr', 'ₘₑ𝓌',
+         'ᴍᴇᴡ', 'ₚᵤᵣᵣ', '¿𝓌ₒₒ𝒻?',
+         'ᴍᴇᴏᴡ' ]
 
 # set this to 1 minute so we post almost immediately
 meowd = Elephrame::Bots::PeriodInteract.new '1m'
