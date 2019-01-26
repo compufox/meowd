@@ -13,9 +13,12 @@ Mews = [ 'meow', 'mew', 'purr', 'ₘₑ𝓌',
 # set this to 1 minute so we post almost immediately
 meowd = Elephrame::Bots::PeriodInteract.new '1m'
 
-meowd.on_reply { |bot|
+meowd.on_reply { |bot, post|
   # reply to mentions with a random mew
-  bot.reply_with_mentions(Mews.sample)
+  mew = Mews.sample
+  
+  bot.reply_with_mentions(mew)
+  log.info "replied to #{post.account.acct} with #{mew}"
 }
 
 meowd.run { |bot|
